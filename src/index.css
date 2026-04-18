@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-terminal-green: #00ff41;
+  --color-terminal-bg: #050505;
+  --color-terminal-dark: #1a1a1a;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-terminal-bg text-terminal-green font-mono overflow-hidden;
+  }
+}
+
+@layer components {
+  .bypass-badge {
+    @apply bg-terminal-green text-black px-4 py-1 font-black text-sm tracking-widest -rotate-2;
+  }
+  
+  .vertical-label {
+    writing-mode: vertical-rl;
+  }
+
+  .stat-card {
+    @apply border border-terminal-green p-4 relative bg-black/20;
+  }
+
+  .stat-card::after {
+    content: "";
+    @apply absolute top-0 right-0 w-2.5 h-2.5 bg-terminal-green;
+  }
+}
